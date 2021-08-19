@@ -15,7 +15,8 @@
                                 Editar una nota
                             </h3>
                             <p class="text-sm text-gray-600">
-                                Si editas no podrás voler al estado anterior
+                                Si editas, no podras volver a su estado
+                                anterior.
                             </p>
                         </div>
                     </div>
@@ -28,39 +29,37 @@
                                         font-medium
                                         text-sm text-gray-700
                                     "
-                                    >Resumen</label
                                 >
+                                    Resumen
+                                </label>
                                 <textarea
                                     class="
                                         form-input
                                         w-full
-                                        ronunded-md
+                                        rounded-md
                                         shadow-sm
                                     "
-                                >
-                                   v-model="form.excerpt"
-                               </textarea
-                                >
+                                    v-model="form.excerpt"
+                                ></textarea>
                                 <label
                                     class="
                                         block
                                         font-medium
                                         text-sm text-gray-700
                                     "
-                                    >Contenido</label
                                 >
+                                    Contenido
+                                </label>
                                 <textarea
                                     class="
                                         form-input
                                         w-full
-                                        ronunded-md
+                                        rounded-md
                                         shadow-sm
                                     "
-                                >
-                                   v-model="form.description"
-                                   rows="8"
-                               </textarea
-                                >
+                                    v-model="form.description"
+                                    rows="8"
+                                ></textarea>
                                 <button
                                     class="
                                         bg-blue-500
@@ -69,6 +68,7 @@
                                         font-bold
                                         py-2
                                         px-4
+                                        rounded-md
                                     "
                                 >
                                     Editar
