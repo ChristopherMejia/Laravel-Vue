@@ -12,11 +12,10 @@
                     <div class="md:col-span-1">
                         <div class="px-4 sm:px0">
                             <h3 class="text-lg text-gray-900">
-                                Editar una nota
+                                Crear una nota
                             </h3>
                             <p class="text-sm text-gray-600">
-                                Si editas, no podras volver a su estado
-                                anterior.
+                                Luego de crear se podra editar.
                             </p>
                         </div>
                     </div>
@@ -71,14 +70,9 @@
                                         rounded-md
                                     "
                                 >
-                                    Editar
+                                    Guardar
                                 </button>
                             </form>
-
-                            <hr class="my-6" />
-                            <a href="#" @click.prevent="destroy">
-                                Eliminar Nota
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -97,28 +91,17 @@ export default {
         Head,
         Link,
     },
-    props: {
-        note: Object,
-    },
     data() {
         return {
             form: {
-                excerpt: this.note.excerpt,
-                description: this.note.description,
+                excerpt: "",
+                description: "",
             },
         };
     },
     methods: {
         submit() {
-            this.$inertia.put(
-                this.route("notes.update", this.note.id),
-                this.form
-            );
-        },
-        destroy() {
-            if (confirm("¿Desea Eliminar?")) {
-                this.$inertia.delete(this.route("notes.destroy", this.note.id));
-            }
+            this.$inertia.post(this.route("notes.store"), this.form);
         },
     },
 };
